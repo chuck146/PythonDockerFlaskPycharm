@@ -70,7 +70,7 @@ def form_insert_post():
     return redirect("/", code=302)
 
 @app.route('/delete/<int:home_id>', methods=['POST'])
-def form_delete_post(city_id):
+def form_delete_post(home_id):
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM zillow WHERE id = %s """
     cursor.execute(sql_delete_query, home_id)
